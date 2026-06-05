@@ -21,7 +21,10 @@ export default defineConfig({
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
-    launchOptions: slowMo ? { slowMo } : undefined,
+    launchOptions: {
+      // Add any launch options here
+      slowMo: 500,
+    },
   },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
